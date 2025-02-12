@@ -54,7 +54,7 @@ function App() {
           <motion.img
             src="/assets/perfil.png" // Substitua pelo caminho correto da sua imagem
             alt="Caio Henrique R. Martins"
-            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto mb-8 rounded-full"
+            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto mb-3 md:mb-8 rounded-full"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
