@@ -51,6 +51,15 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+          <motion.img
+            src="/assets/perfil.png" // Substitua pelo caminho correto da sua imagem
+            alt="Caio Henrique R. Martins"
+            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto mb-8 rounded-full"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Olá, eu sou{" "}
             <span className="text-primary-light">Caio Henrique R. Martins</span>
