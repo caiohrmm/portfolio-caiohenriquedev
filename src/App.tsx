@@ -60,15 +60,15 @@ function App() {
             transition={{ duration: 0.5 }}
           />
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-3 md:mb-6">
             Olá, eu sou{" "}
             <span className="text-primary-light">Caio Henrique R. Martins</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-1.5">
             Desenvolvedor Full Stack apaixonado por transformar ideias em
             experiências digitais.
           </p>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8">
             Atualmente curso o último ano de Engenharia de Software, sempre
             buscando novos desafios.
           </p>
