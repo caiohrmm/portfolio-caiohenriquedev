@@ -83,7 +83,7 @@ function App() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8"
+          className="absolute bottom-0 md:bottom-2"
         >
           <ChevronDown className="w-8 h-8 text-primary-light" />
         </motion.div>
