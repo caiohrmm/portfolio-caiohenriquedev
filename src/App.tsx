@@ -28,7 +28,7 @@ function App() {
         "Landing Page desenvolvida com React e JavaScript para atrair leads e aumentar a visibilidade de um pet shop, oferecendo uma experiência envolvente e interativa para os clientes.",
       image: "/assets/petjoy.PNG",
       githubUrl: "https://github.com/caiohrmm/petjoy-landing-page.git",
-      liveUrl: "https://petjoylandingpage.vercel.app/",
+      liveUrl: "https://petjoy-landing-page.vercel.app/",
     },
     {
       title: "PIVCINC - REDE SOCIAL PARA ADICTOS",
