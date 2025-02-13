@@ -90,7 +90,7 @@ function App() {
         </motion.div>
 
         {/* Ícones das Tecnologias */}
-        <div className="flex gap-6 mt-8">
+        <div className="flex gap-6 mt-4 md:mt-8">
           <FaJava className="w-6 h-6 md:w-10 md:h-10 text-red-600 hover:scale-110 transition-all" />
           <SiJavascript className="w-6 h-6 md:w-10 md:h-10 text-yellow-500 hover:scale-110 transition-all" />
           <SiPhp className="w-6 h-6 md:w-10 md:h-10 text-blue-400 hover:scale-110 transition-all" />
