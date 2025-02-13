@@ -10,7 +10,7 @@ import {
   SiMysql,
   SiMongodb,
   SiNodedotjs,
-  SiTypescript 
+  SiTypescript,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 function App() {
@@ -44,6 +44,14 @@ function App() {
       description:
         "O PIVCINC é uma plataforma social desenvolvida para conectar pessoas em recuperação de vícios, promovendo apoio mútuo e facilitando a organização de encontros e eventos. Criado com React no frontend e um backend em Node.js, Express, MongoDB e JWT, o sistema oferece uma experiência completa, permitindo que os usuários interajam por meio de postagens, curtidas e comentários, fortalecendo sua rede de apoio.",
       image: "/assets/pivcinc.PNG",
+      githubUrl: "https://github.com/caiohrmm/pivcinc-backend.git",
+      liveUrl: "",
+    },
+    {
+      title: "GERENCIADOR DE ANIMAIS",
+      description:
+        "O Gerenciador de Animais é um sistema desenvolvido para facilitar o cadastro e gerenciamento de animais, oferecendo um CRUD completo e intuitivo. Criado com Node.js, Express e Handlebars. A plataforma permite adicionar, editar, visualizar e excluir registros, garantindo uma experiência simples e eficiente. Com uma interface dinâmica e bem estruturada, o sistema foi crucial para me fazer praticar e aprender conceitos de desenvolvimento backend de forma prática e objetiva.",
+      image: "/assets/nodehandlebars.PNG",
       githubUrl: "https://github.com/caiohrmm/pivcinc-backend.git",
       liveUrl: "",
     },
