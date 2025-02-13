@@ -8,7 +8,9 @@ interface ProjectCardProps {
   image: string;
   liveUrl?: string;
   githubUrl?: string;
+  githubUrlFrontend?: string;
   video?: string;
+  githubUrlBackend?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -18,6 +20,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   liveUrl,
   githubUrl,
   video,
+  githubUrlFrontend,
+  githubUrlBackend
 }) => {
   return (
     <motion.div
@@ -42,6 +46,28 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             >
               <Github className="w-5 h-5" />
               <span>GitHub</span>
+            </a>
+          )}
+          {githubUrlFrontend && (
+            <a
+              href={githubUrlFrontend}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
+            >
+              <Github className="w-5 h-5" />
+              <span>GitHub Frontend</span>
+            </a>
+          )}
+          {githubUrlBackend && (
+            <a
+              href={githubUrlBackend}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
+            >
+              <Github className="w-5 h-5" />
+              <span>GitHub Backend</span>
             </a>
           )}
           {liveUrl && (

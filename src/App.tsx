@@ -44,7 +44,8 @@ function App() {
       description:
         "O PIVCINC é uma plataforma social desenvolvida para conectar pessoas em recuperação de vícios, promovendo apoio mútuo e facilitando a organização de encontros e eventos. Criado com React no frontend e um backend em Node.js, Express, MongoDB e JWT, o sistema oferece uma experiência completa, permitindo que os usuários interajam por meio de postagens, curtidas e comentários, fortalecendo sua rede de apoio.",
       image: "/assets/pivcinc.PNG",
-      githubUrl: "https://github.com/caiohrmm/pivcinc-backend.git",
+      githubUrlBackend: "https://github.com/caiohrmm/pivcinc-backend.git",
+      githubUrlFrontend: "https://github.com/caiohrmm/frontend-pivcinc.git",
       video: "#",
     },
     {
@@ -61,8 +62,7 @@ function App() {
       description:
         "O JáPensou? é uma plataforma interativa desenvolvida com Express, Handlebars, Sequelize e MySQL, proporcionando uma experiência dinâmica para compartilhar ideias. Com autenticação por sessão, os usuários podem cadastrar, visualizar, editar e excluir pensamentos de forma intuitiva. Além disso, o sistema permite filtrar pensamentos, facilitando a busca por reflexões específicas.",
       image: "/assets/japensou.PNG",
-      githubUrl:
-        "https://github.com/caiohrmm/JaPensou.git",
+      githubUrl: "https://github.com/caiohrmm/JaPensou.git",
       video: "https://youtu.be/I7rUmj0PWEQ",
     },
   ];

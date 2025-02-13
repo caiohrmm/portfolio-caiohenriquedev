@@ -58,6 +58,11 @@ const certifications: Certification[] = [
     provider: "Formação de 40 horas em Python, focada em fundamentos da linguagem e prática com exercícios.",
     image: "/assets/certificacaopython.jpg",
   },
+  {
+    title: "SPRING & MVC COM THYMELEAF",
+    provider: "Formação de 9 horas em SpringBoot com Thymeleaf, desenvolvendo um projeto com arquitetura MVC.",
+    image: "/assets/certificacaospringmvc.jpg",
+  },
 ];
 
 type CertificationCardProps = {
