@@ -3,13 +3,22 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { ProjectCard } from "./components/ProjectCard";
-
+import CertificationsSection from "./components/CertificationSession";
+import {
+  SiJavascript,
+  SiPhp,
+  SiMysql,
+  SiMongodb,
+  SiNodedotjs,
+  SiTypescript 
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 function App() {
   const projects = [
     {
       title: "CASESC - CASA DO SERRALHEIRO DE SANTA CRUZ",
       description:
-        "Landing Page desenvolvida com React e TypeScript para uma loja especializada na comercialização de produtos para serralheiros.",
+        "Landing Page desenvolvida com React, TypeScript e TailwindCSS para uma loja especializada na comercialização de produtos para serralheiros.",
       image: "/assets/casesc.PNG",
       githubUrl: "https://github.com/caiohrmm/casesc-serralheria.git",
       liveUrl: "https://casesc-serralheria.vercel.app/",
@@ -17,7 +26,7 @@ function App() {
     {
       title: "NUTRICARE - GESTÃO PARA CLÍNICAS DE NUTRIÇÃO",
       description:
-        "Landing Page criada com React e TypeScript para apresentar um sistema Full Stack desenvolvido por mim, projetado para otimizar a gestão de clínicas de nutrição com eficiência e praticidade.",
+        "Landing Page criada com React, TypeScript e TailwindCSS para apresentar um sistema Full Stack desenvolvido por mim, projetado para otimizar a gestão de clínicas de nutrição com eficiência e praticidade.",
       image: "/assets/nutricare.PNG",
       githubUrl: "https://github.com/caiohrmm/nutricare-landingpage.git",
       liveUrl: "https://nutricare-landingpage.vercel.app/",
@@ -80,6 +89,17 @@ function App() {
           </a>
         </motion.div>
 
+        {/* Ícones das Tecnologias */}
+        <div className="flex gap-6 mt-8">
+          <FaJava className="w-6 h-6 md:w-10 md:h-10 text-red-600 hover:scale-110 transition-all" />
+          <SiJavascript className="w-6 h-6 md:w-10 md:h-10 text-yellow-500 hover:scale-110 transition-all" />
+          <SiPhp className="w-6 h-6 md:w-10 md:h-10 text-blue-400 hover:scale-110 transition-all" />
+          <SiMysql className="w-6 h-6 md:w-10 md:h-10 text-blue-600 hover:scale-110 transition-all" />
+          <SiMongodb className="w-6 h-6 md:w-10 md:h-10 text-green-500 hover:scale-110 transition-all" />
+          <SiNodedotjs className="w-6 h-6 md:w-10 md:h-10 text-green-600 hover:scale-110 transition-all" />
+          <SiTypescript className="w-6 h-6 md:w-10 md:h-10 text-blue-600 hover:scale-110 transition-all" />
+        </div>
+
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -101,6 +121,11 @@ function App() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Certification Section */}
+      <section>
+        <CertificationsSection />
       </section>
 
       {/* Contact Section */}
