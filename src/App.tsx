@@ -45,15 +45,25 @@ function App() {
         "O PIVCINC é uma plataforma social desenvolvida para conectar pessoas em recuperação de vícios, promovendo apoio mútuo e facilitando a organização de encontros e eventos. Criado com React no frontend e um backend em Node.js, Express, MongoDB e JWT, o sistema oferece uma experiência completa, permitindo que os usuários interajam por meio de postagens, curtidas e comentários, fortalecendo sua rede de apoio.",
       image: "/assets/pivcinc.PNG",
       githubUrl: "https://github.com/caiohrmm/pivcinc-backend.git",
-      liveUrl: "",
+      video: "#",
     },
     {
       title: "GERENCIADOR DE ANIMAIS",
       description:
         "O Gerenciador de Animais é um sistema desenvolvido para facilitar o cadastro e gerenciamento de animais, oferecendo um CRUD completo e intuitivo. Criado com Node.js, Express e Handlebars. A plataforma permite adicionar, editar, visualizar e excluir registros, garantindo uma experiência simples e eficiente. Com uma interface dinâmica e bem estruturada, o sistema foi crucial para me fazer praticar e aprender conceitos de desenvolvimento backend de forma prática e objetiva.",
       image: "/assets/nodehandlebars.PNG",
-      githubUrl: "https://github.com/caiohrmm/pivcinc-backend.git",
-      liveUrl: "",
+      githubUrl:
+        "https://github.com/caiohrmm/Projeto-Gerenciador-de-animais.git",
+      video: "https://youtu.be/8Q52YrS-CC4",
+    },
+    {
+      title: "JÁPENSOU?",
+      description:
+        "O JáPensou? é uma plataforma interativa desenvolvida com Express, Handlebars, Sequelize e MySQL, proporcionando uma experiência dinâmica para compartilhar ideias. Com autenticação por sessão, os usuários podem cadastrar, visualizar, editar e excluir pensamentos de forma intuitiva. Além disso, o sistema permite filtrar pensamentos, facilitando a busca por reflexões específicas.",
+      image: "/assets/japensou.PNG",
+      githubUrl:
+        "https://github.com/caiohrmm/JaPensou.git",
+      video: "https://youtu.be/I7rUmj0PWEQ",
     },
   ];
 

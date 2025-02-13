@@ -1,6 +1,6 @@
-import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Github, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface ProjectCardProps {
   title: string;
@@ -8,6 +8,7 @@ interface ProjectCardProps {
   image: string;
   liveUrl?: string;
   githubUrl?: string;
+  video?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -16,6 +17,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   liveUrl,
   githubUrl,
+  video,
 }) => {
   return (
     <motion.div
@@ -24,13 +26,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       viewport={{ once: true }}
       className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
     >
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-48 object-cover"
-      />
+      <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+          {title}
+        </h3>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{description}</p>
         <div className="flex gap-4">
           {githubUrl && (
@@ -53,6 +53,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             >
               <ExternalLink className="w-5 h-5" />
               <span>Live Demo</span>
+            </a>
+          )}
+          {video && (
+            <a
+              href={video}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
+            >
+              <ExternalLink className="w-5 h-5" />
+              <span>Video de apresentação</span>
             </a>
           )}
         </div>
