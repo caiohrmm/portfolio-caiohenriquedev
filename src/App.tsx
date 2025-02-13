@@ -77,7 +77,7 @@ function App() {
             Desenvolvedor Full Stack apaixonado por transformar ideias em
             experiências digitais.
           </p>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-5 md:mb-8">
             Atualmente curso o último ano de Engenharia de Software, sempre
             buscando novos desafios.
           </p>
@@ -90,7 +90,7 @@ function App() {
         </motion.div>
 
         {/* Ícones das Tecnologias */}
-        <div className="flex gap-6 mt-4 md:mt-8">
+        <div className="flex gap-6 mt-6 md:mt-8">
           <FaJava className="w-6 h-6 md:w-10 md:h-10 text-red-600 hover:scale-110 transition-all" />
           <SiJavascript className="w-6 h-6 md:w-10 md:h-10 text-yellow-500 hover:scale-110 transition-all" />
           <SiPhp className="w-6 h-6 md:w-10 md:h-10 text-blue-400 hover:scale-110 transition-all" />
