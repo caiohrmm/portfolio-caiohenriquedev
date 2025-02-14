@@ -20,10 +20,10 @@ const certifications: Certification[] = [
     image: "/assets/certificacaoreact.jpg",
   },
   {
-    title: "DO ZERO A AWS - REST API'S COM SPRING BOOT E DOCKER",
+    title: "DESENVOLVIMENTO WEB COMPLETO 2023",
     provider:
-      "Formação de 65,5 horas em desenvolvimento Java para sistemas legados e modernos voltado para API's RESTful.",
-    image: "/assets/certificacaospring.jpg",
+      "Formação de 114,5 horas em desenvolvimento web, abordando tecnologias como jQuery, Bootstrap, SASS, WordPress, Ionic e Ajax.",
+    image: "/assets/certificacaoweb.jpg",
   },
   {
     title: "JAVA COMPLETO POR NELIO ALVES",
@@ -44,23 +44,28 @@ const certifications: Certification[] = [
     image: "/assets/certificacaotailwind.jpg",
   },
   {
-    title: "DESENVOLVIMENTO WEB COMPLETO 2023",
-    provider: "Formação de 114,5 horas em desenvolvimento web, abordando tecnologias como jQuery, Bootstrap, SASS, WordPress, Ionic e Ajax.",
-    image: "/assets/certificacaoweb.jpg",
+    title: "DO ZERO A AWS - REST API'S COM SPRING BOOT E DOCKER",
+    provider:
+      "Formação de 65,5 horas em desenvolvimento Java para sistemas legados e modernos voltado para API's RESTful.",
+    image: "/assets/certificacaospring.jpg",
   },
+
   {
     title: "GIT E GITHUB - DO BÁSICO AO AVANÇADO",
-    provider: "Formação de 8,5 horas em Git, abordando versionamento de código, GitHub e implantação com GitHub Pages.",
+    provider:
+      "Formação de 8,5 horas em Git, abordando versionamento de código, GitHub e implantação com GitHub Pages.",
     image: "/assets/certificacaogithub.jpg",
   },
   {
     title: "PYTHON 3 MUNDO 2 - CURSO EM VÍDEO",
-    provider: "Formação de 40 horas em Python, focada em fundamentos da linguagem e prática com exercícios.",
+    provider:
+      "Formação de 40 horas em Python, focada em fundamentos da linguagem e prática com exercícios.",
     image: "/assets/certificacaopython.jpg",
   },
   {
     title: "SPRING & MVC COM THYMELEAF",
-    provider: "Formação de 9 horas em SpringBoot com Thymeleaf, desenvolvendo um projeto com arquitetura MVC.",
+    provider:
+      "Formação de 9 horas em SpringBoot com Thymeleaf, desenvolvendo um projeto com arquitetura MVC.",
     image: "/assets/certificacaospringmvc.jpg",
   },
 ];

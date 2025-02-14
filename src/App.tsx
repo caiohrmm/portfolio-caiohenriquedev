@@ -46,7 +46,7 @@ function App() {
       image: "/assets/pivcinc.PNG",
       githubUrlBackend: "https://github.com/caiohrmm/pivcinc-backend.git",
       githubUrlFrontend: "https://github.com/caiohrmm/frontend-pivcinc.git",
-      video: "#",
+      video: "https://youtu.be/kndnZcToZxU",
     },
     {
       title: "GERENCIADOR DE ANIMAIS",
