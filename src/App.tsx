@@ -65,6 +65,38 @@ function App() {
       githubUrl: "https://github.com/caiohrmm/JaPensou.git",
       video: "https://youtu.be/I7rUmj0PWEQ",
     },
+    {
+      title: "Dani Piza Beauty",
+      description:
+        "Site institucional desenvolvido com React e TailwindCSS para a maquiadora Dani Piza, de Santa Cruz do Rio Pardo. Projeto responsivo e otimizado para apresentar serviços e portfólio.",
+      image: "/assets/fotodanipiza.PNG",
+      githubUrl: "",
+      liveUrl: "https://danipizabeauty.com.br",
+    },
+    {
+      title: "CHRN Advocacia",
+      description:
+        "Site institucional desenvolvido com React e TailwindCSS para o advogado Carlos Henrique Rodrigues Nascimento. Estruturado para apresentar informações sobre o escritório e facilitar o contato com clientes.",
+      image: "/assets/fotochrn.webp",
+      githubUrl: "",
+      liveUrl: "https://chrnadvocacia.com.br",
+    },
+    {
+      title: "Barbearia Henrique Coelho",
+      description:
+        "Landing Page desenvolvida com React e TailwindCSS para o barbeiro Henrique Coelho, de Bernardino de Campos. Projeto com foco em identidade visual moderna e agendamento de horários.",
+      image: "/assets/fotohenrique.webp",
+      githubUrl: "",
+      liveUrl: "https://barbeariahenriquecoelho.com.br",
+    },
+    {
+      title: "IDS AI — Detector de Ameaças em Fluxos de Rede",
+      description:
+        "Sistema backend com integração de Machine Learning e Inteligência Artificial para detecção preventiva de tráfego malicioso. Treinado com os datasets CICIDS2017 e UNSW-NB15. Possui arquitetura com Python (Scikit-Learn, XGBoost, SMOTE) para o modelo, Node.js (Express, Multer) para API, Gemini AI para insights e frontend estático em HTML, CSS e JavaScript.",
+      image: "/assets/ids em portugues.PNG",
+      githubUrl: "https://github.com/caiohrmm/IDS-AI---by-Caio-Henrique--IDS---Intrusion-Detection-System-",
+      liveUrl: "",
+    }
   ];
 
   return (
