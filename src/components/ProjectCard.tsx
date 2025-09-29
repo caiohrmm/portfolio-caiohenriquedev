@@ -1,6 +1,7 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "../hooks/useLanguage.tsx";
 
 interface ProjectCardProps {
   title: string;
@@ -23,6 +24,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrlFrontend,
   githubUrlBackend
 }) => {
+  const { t } = useLanguage();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -45,7 +47,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
             >
               <Github className="w-5 h-5" />
-              <span>GitHub</span>
+              <span>{t('labels.github')}</span>
             </a>
           )}
           {githubUrlFrontend && (
@@ -56,7 +58,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
             >
               <Github className="w-5 h-5" />
-              <span>GitHub Frontend</span>
+              <span>{t('labels.githubFrontend')}</span>
             </a>
           )}
           {githubUrlBackend && (
@@ -67,7 +69,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
             >
               <Github className="w-5 h-5" />
-              <span>GitHub Backend</span>
+              <span>{t('labels.githubBackend')}</span>
             </a>
           )}
           {liveUrl && (
@@ -78,7 +80,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
             >
               <ExternalLink className="w-5 h-5" />
-              <span>Live Demo</span>
+              <span>{t('labels.liveDemo')}</span>
             </a>
           )}
           {video && (
@@ -89,7 +91,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-light transition-colors"
             >
               <ExternalLink className="w-5 h-5" />
-              <span>Video de apresentação</span>
+              <span>{t('labels.video')}</span>
             </a>
           )}
         </div>

@@ -16,8 +16,61 @@
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+  .scroll-progress {
+    @apply fixed top-0 left-0 h-1 bg-primary-light z-50 origin-left;
+    transform: scaleX(var(--scroll-progress, 0));
+  }
 }
 
 body, html {
   overflow-x: hidden;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-20px) translateX(10px) scale(1.05); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+.gradient-blob {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: floatSlow 10s ease-in-out infinite;
+}
+
+.gradient-blob.one {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle at 30% 30%, #60a5fa, transparent 60%), radial-gradient(circle at 70% 70%, #34d399, transparent 60%);
+  top: -80px;
+  left: -80px;
+}
+
+.gradient-blob.two {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle at 30% 30%, #f472b6, transparent 60%), radial-gradient(circle at 70% 70%, #f59e0b, transparent 60%);
+  bottom: -60px;
+  right: -80px;
+  animation-delay: 1.2s;
+}
+
+@media (max-width: 768px) {
+  .gradient-blob.one {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+    opacity: 0.2;
+  }
+  
+  .gradient-blob.two {
+    width: 180px;
+    height: 180px;
+    bottom: -40px;
+    right: -50px;
+    opacity: 0.2;
+  }
 }

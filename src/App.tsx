@@ -1,7 +1,9 @@
-import React from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown, Download } from "lucide-react";
 import { ThemeToggle } from "./components/ThemeToggle";
+import { LanguageToggle } from "./components/LanguageToggle";
+import { useLanguage } from "./hooks/useLanguage.tsx";
 import { ProjectCard } from "./components/ProjectCard";
 import CertificationsSection from "./components/CertificationSession";
 import {
@@ -14,94 +16,106 @@ import {
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 function App() {
+  const { t } = useLanguage();
+  useEffect(() => {
+    const onScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = total > 0 ? window.scrollY / total : 0;
+      document.documentElement.style.setProperty('--scroll-progress', progress.toString());
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const projects = [
     {
-      title: "CASESC - CASA DO SERRALHEIRO DE SANTA CRUZ",
-      description:
-        "Landing Page desenvolvida com React, TypeScript e TailwindCSS para uma loja especializada na comercialização de produtos para serralheiros.",
+      title: t('projects.casesc.title'),
+      description: t('projects.casesc.description'),
       image: "/assets/casesc.PNG",
       githubUrl: "https://github.com/caiohrmm/casesc-serralheria.git",
       liveUrl: "https://casesc-serralheria.vercel.app/",
     },
     {
-      title: "NUTRICARE - GESTÃO PARA CLÍNICAS DE NUTRIÇÃO",
-      description:
-        "Landing Page criada com React, TypeScript e TailwindCSS para apresentar um sistema Full Stack desenvolvido por mim, projetado para otimizar a gestão de clínicas de nutrição com eficiência e praticidade.",
+      title: t('projects.nutricare.title'),
+      description: t('projects.nutricare.description'),
       image: "/assets/nutricare.PNG",
       githubUrl: "https://github.com/caiohrmm/nutricare-landingpage.git",
       liveUrl: "https://nutricare-landingpage.vercel.app/",
     },
     {
-      title: "PETJOY - CUIDE BEM DO SEU PET",
-      description:
-        "Landing Page desenvolvida com React para atrair leads e aumentar a visibilidade de um pet shop, oferecendo uma experiência envolvente e interativa para os clientes.",
+      title: t('projects.petjoy.title'),
+      description: t('projects.petjoy.description'),
       image: "/assets/petjoy.PNG",
       githubUrl: "https://github.com/caiohrmm/petjoy-landing-page.git",
       liveUrl: "https://petjoy-landing-page.vercel.app/",
     },
     {
-      title: "PIVCINC - REDE SOCIAL PARA ADICTOS",
-      description:
-        "O PIVCINC é uma plataforma social desenvolvida para conectar pessoas em recuperação de vícios, promovendo apoio mútuo e facilitando a organização de encontros e eventos. Criado com React no frontend e um backend em Node.js, Express, MongoDB e JWT, o sistema oferece uma experiência completa, permitindo que os usuários interajam por meio de postagens, curtidas e comentários, fortalecendo sua rede de apoio.",
+      title: t('projects.pivcinc.title'),
+      description: t('projects.pivcinc.description'),
       image: "/assets/pivcinc.PNG",
       githubUrlBackend: "https://github.com/caiohrmm/pivcinc-backend.git",
       githubUrlFrontend: "https://github.com/caiohrmm/frontend-pivcinc.git",
       video: "https://youtu.be/kndnZcToZxU",
     },
     {
-      title: "GERENCIADOR DE ANIMAIS",
-      description:
-        "O Gerenciador de Animais é um sistema desenvolvido para facilitar o cadastro e gerenciamento de animais, oferecendo um CRUD completo e intuitivo. Criado com Node.js, Express e Handlebars. A plataforma permite adicionar, editar, visualizar e excluir registros, garantindo uma experiência simples e eficiente. Com uma interface dinâmica e bem estruturada, o sistema foi crucial para me fazer praticar e aprender conceitos de desenvolvimento backend de forma prática e objetiva.",
+      title: t('projects.animalManager.title'),
+      description: t('projects.animalManager.description'),
       image: "/assets/nodehandlebars.PNG",
       githubUrl:
         "https://github.com/caiohrmm/Projeto-Gerenciador-de-animais.git",
       video: "https://youtu.be/8Q52YrS-CC4",
     },
     {
-      title: "JÁPENSOU?",
-      description:
-        "O JáPensou? é uma plataforma interativa desenvolvida com Express, Handlebars, Sequelize e MySQL, proporcionando uma experiência dinâmica para compartilhar ideias. Com autenticação por sessão, os usuários podem cadastrar, visualizar, editar e excluir pensamentos de forma intuitiva. Além disso, o sistema permite filtrar pensamentos, facilitando a busca por reflexões específicas.",
+      title: t('projects.japensou.title'),
+      description: t('projects.japensou.description'),
       image: "/assets/japensou.PNG",
       githubUrl: "https://github.com/caiohrmm/JaPensou.git",
       video: "https://youtu.be/I7rUmj0PWEQ",
     },
     {
-      title: "Dani Piza Beauty",
-      description:
-        "Site institucional desenvolvido com React e TailwindCSS para a maquiadora Dani Piza, de Santa Cruz do Rio Pardo. Projeto responsivo e otimizado para apresentar serviços e portfólio.",
+      title: t('projects.danipiza.title'),
+      description: t('projects.danipiza.description'),
       image: "/assets/fotodanipiza.PNG",
       githubUrl: "",
       liveUrl: "https://danipizabeauty.com.br",
     },
     {
-      title: "CHRN Advocacia",
-      description:
-        "Site institucional desenvolvido com React e TailwindCSS para o advogado Carlos Henrique Rodrigues Nascimento. Estruturado para apresentar informações sobre o escritório e facilitar o contato com clientes.",
+      title: t('projects.chrn.title'),
+      description: t('projects.chrn.description'),
       image: "/assets/fotochrn.webp",
       githubUrl: "",
       liveUrl: "https://chrnadvocacia.com.br",
     },
     {
-      title: "Barbearia Henrique Coelho",
-      description:
-        "Landing Page desenvolvida com React e TailwindCSS para o barbeiro Henrique Coelho, de Bernardino de Campos. Projeto com foco em identidade visual moderna e agendamento de horários.",
+      title: t('projects.henrique.title'),
+      description: t('projects.henrique.description'),
       image: "/assets/fotohenrique.webp",
       githubUrl: "",
       liveUrl: "https://barbeariahenriquecoelho.com.br",
     },
     {
-      title: "IDS AI — Detector de Ameaças em Fluxos de Rede",
-      description:
-        "Sistema backend com integração de Machine Learning e Inteligência Artificial para detecção preventiva de tráfego malicioso. Treinado com os datasets CICIDS2017 e UNSW-NB15. Possui arquitetura com Python (Scikit-Learn, XGBoost, SMOTE) para o modelo, Node.js (Express, Multer) para API, Gemini AI para insights e frontend estático em HTML, CSS e JavaScript.",
+      title: t('projects.ids.title'),
+      description: t('projects.ids.description'),
       image: "/assets/ids em portugues.PNG",
       githubUrl: "https://github.com/caiohrmm/IDS-AI---by-Caio-Henrique--IDS---Intrusion-Detection-System-",
       liveUrl: "",
+    },
+    {
+      title: t('projects.fazenda.title'),
+      description: t('projects.fazenda.description'),
+      githubUrl: "https://github.com/caiohrmm/FazendaEsperanca.git",
+      image: "/assets/projetofazendaesperanca.PNG",
+      video: "https://www.linkedin.com/posts/caiohenriquerm_fullstack-springboot-reactjs-activity-7363245567482675200-iSYQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADj9DJsB5pf6vkK8zJKuCbhpBriCJmn3sLo",
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors relative overflow-hidden">
+      <div className="scroll-progress" />
+      <div className="gradient-blob one" />
+      <div className="gradient-blob two" />
       <ThemeToggle />
+      <LanguageToggle />
 
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-4">
@@ -120,23 +134,33 @@ function App() {
           />
 
           <h1 className="text-4xl md:text-6xl font-bold mb-3 md:mb-6">
-            Olá, eu sou{" "}
+            {t('hero.greetingPrefix')} {" "}
             <span className="text-primary-light">Caio Henrique R. Martins</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-1.5">
-            Desenvolvedor Full Stack apaixonado por transformar ideias em
-            experiências digitais.
+            {t('hero.subtitle1')}
           </p>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-5 md:mb-8">
-            Atualmente curso o último ano de Engenharia de Software, sempre
-            buscando novos desafios.
+            {t('hero.subtitle2')}
           </p>
-          <a
-            href="#contact"
-            className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-medium transition-colors"
-          >
-            Entre em contato
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <a
+              href="#contact"
+              className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              {t('hero.cta')}
+            </a>
+            <motion.a
+              href="/curriculo/CURRICULO CAIO HENRIQUE RODRIGUES MARTINS.pdf"
+              download
+              className="group bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-5 h-5 group-hover:animate-bounce" />
+              {t('hero.downloadCv')}
+            </motion.a>
+          </div>
         </motion.div>
 
         {/* Ícones das Tecnologias */}
@@ -150,20 +174,13 @@ function App() {
           <SiTypescript className="w-6 h-6 md:w-10 md:h-10 text-blue-600 hover:scale-110 transition-all" />
         </div>
 
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-0 md:bottom-2"
-        >
-          <ChevronDown className="w-8 h-8 text-primary-light" />
-        </motion.div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Meus Projetos
+            {t('sections.projects')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
@@ -182,13 +199,13 @@ function App() {
       <section id="contact" className="py-20 px-4 bg-white dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Vamos Conversar
+            {t('sections.contact')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-            Muito obrigado por visitar meu Portfólio. Espero que tenha gostado !
+            {t('contact.thanks')}
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
-            Estou sempre aberto a novas oportunidades e colaborações.
+            {t('contact.open')}
           </p>
           <div className="flex justify-center gap-8">
             <a

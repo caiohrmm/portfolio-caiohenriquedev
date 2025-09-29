@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "../hooks/useTheme";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "../hooks/useLanguage.tsx";
 
 type Certification = {
   title: string;
@@ -12,60 +13,50 @@ type Certification = {
   image: string;
 };
 
-const certifications: Certification[] = [
+const getCertifications = (t: (key: string) => string): Certification[] => [
   {
-    title: "REACT - DO ZERO A MAESTRIA",
-    provider:
-      "Formação de 30,5 horas em React com projetos FullStack, fundamentos de versionamento e um pouco de TypeScript e banco de dados.",
+    title: t('certifications.react.title'),
+    provider: t('certifications.react.provider'),
     image: "/assets/certificacaoreact.jpg",
   },
   {
-    title: "DESENVOLVIMENTO WEB COMPLETO 2023",
-    provider:
-      "Formação de 114,5 horas em desenvolvimento web, abordando tecnologias como jQuery, Bootstrap, SASS, WordPress, Ionic e Ajax.",
+    title: t('certifications.web.title'),
+    provider: t('certifications.web.provider'),
     image: "/assets/certificacaoweb.jpg",
   },
   {
-    title: "JAVA COMPLETO POR NELIO ALVES",
-    provider:
-      "Formação de 54,5 horas em fundamentos da linguagem Java, Spring Boot, POO e projetos.",
+    title: t('certifications.java.title'),
+    provider: t('certifications.java.provider'),
     image: "/assets/certificacaojavanelio.jpg",
   },
   {
-    title: "NODE JS - DO ZERO A MAESTRIA",
-    provider:
-      "Formação de 38 horas que promove o desenvolvimento de API's REST com projetos Backend e FullStack.",
+    title: t('certifications.node.title'),
+    provider: t('certifications.node.provider'),
     image: "/assets/certificacaonode.jpg",
   },
   {
-    title: "TAILWINDCSS - DO BÁSICO AO AVANÇADO",
-    provider:
-      "Formação de 11,5 horas em TailwindCSS, focada em estilização moderna, responsiva e atrativa para páginas web.",
+    title: t('certifications.tailwind.title'),
+    provider: t('certifications.tailwind.provider'),
     image: "/assets/certificacaotailwind.jpg",
   },
   {
-    title: "DO ZERO A AWS - REST API'S COM SPRING BOOT E DOCKER",
-    provider:
-      "Formação de 65,5 horas em desenvolvimento Java para sistemas legados e modernos voltado para API's RESTful.",
+    title: t('certifications.spring.title'),
+    provider: t('certifications.spring.provider'),
     image: "/assets/certificacaospring.jpg",
   },
-
   {
-    title: "GIT E GITHUB - DO BÁSICO AO AVANÇADO",
-    provider:
-      "Formação de 8,5 horas em Git, abordando versionamento de código, GitHub e implantação com GitHub Pages.",
+    title: t('certifications.github.title'),
+    provider: t('certifications.github.provider'),
     image: "/assets/certificacaogithub.jpg",
   },
   {
-    title: "PYTHON 3 MUNDO 2 - CURSO EM VÍDEO",
-    provider:
-      "Formação de 40 horas em Python, focada em fundamentos da linguagem e prática com exercícios.",
+    title: t('certifications.python.title'),
+    provider: t('certifications.python.provider'),
     image: "/assets/certificacaopython.jpg",
   },
   {
-    title: "SPRING & MVC COM THYMELEAF",
-    provider:
-      "Formação de 9 horas em SpringBoot com Thymeleaf, desenvolvendo um projeto com arquitetura MVC.",
+    title: t('certifications.springmvc.title'),
+    provider: t('certifications.springmvc.provider'),
     image: "/assets/certificacaospringmvc.jpg",
   },
 ];
@@ -100,10 +91,12 @@ const CustomArrow = ({
   direction,
   onClick,
   theme,
+  t,
 }: {
   direction: "next" | "prev";
   onClick?: () => void;
   theme?: string;
+  t: (key: string) => string;
 }) => {
   const isNext = direction === "next";
 
@@ -118,7 +111,7 @@ const CustomArrow = ({
           }
           ${isNext ? "-right-12 md:-right-16" : "-left-12 md:-left-16"}
           hover:scale-110 hover:bg-opacity-80`}
-      aria-label={isNext ? "Próximo" : "Anterior"}
+      aria-label={isNext ? t('carousel.next') : t('carousel.prev')}
     >
       {isNext ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
     </button>
@@ -126,7 +119,9 @@ const CustomArrow = ({
 };
 
 const CertificationsSection: React.FC = () => {
-  const { theme } = useTheme();
+  const { isDark } = useTheme();
+  const { t } = useLanguage();
+  const certifications = getCertifications(t);
 
   const settings = {
     dots: true,
@@ -134,8 +129,8 @@ const CertificationsSection: React.FC = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 2,
-    nextArrow: <CustomArrow direction="next" theme={theme} />,
-    prevArrow: <CustomArrow direction="prev" theme={theme} />,
+    nextArrow: <CustomArrow direction="next" theme={isDark ? 'dark' : 'light'} t={t} />,
+    prevArrow: <CustomArrow direction="prev" theme={isDark ? 'dark' : 'light'} t={t} />,
     responsive: [
       {
         breakpoint: 768,
@@ -154,7 +149,7 @@ const CertificationsSection: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto text-center relative">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8">
-          Minhas Certificações
+          {t('sections.certifications')}
         </h2>
         <Slider {...settings}>
           {certifications.map((cert, index) => (
