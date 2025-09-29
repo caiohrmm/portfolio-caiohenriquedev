@@ -110,7 +110,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors relative overflow-hidden">
+    <div className="min-h-[100svh] bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors relative overflow-hidden">
       <div className="scroll-progress" />
       <div className="gradient-blob one" />
       <div className="gradient-blob two" />
@@ -118,7 +118,7 @@ function App() {
       <LanguageToggle />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-4">
+      <section className="min-h-[100svh] flex flex-col justify-center items-center text-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

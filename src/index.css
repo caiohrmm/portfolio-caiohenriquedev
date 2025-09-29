@@ -24,6 +24,20 @@
 
 body, html {
   overflow-x: hidden;
+  background-color: #f9fafb; /* gray-50 */
+  min-height: 100svh;
+}
+
+/* Respect iOS safe areas and ensure background fills viewport */
+:root {
+  --safe-top: env(safe-area-inset-top);
+  --safe-bottom: env(safe-area-inset-bottom);
+}
+
+@supports (height: 100dvh) or (height: 100svh) {
+  html, body {
+    min-height: 100svh;
+  }
 }
 
 @keyframes floatSlow {
